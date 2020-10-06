@@ -1,0 +1,6 @@
+#program for multiplying three numbers
+x=87
+b=65
+c=3
+k=x*b*c
+print(t)
