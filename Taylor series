@@ -1,0 +1,28 @@
+def sin(x,n):
+sine = 0
+for i in range(n):
+sign = (-1)**i
+sine = sine + ((x**(2.0*i+1))/factorial(2*i+1))*sign
+return sine
+
+def factorial(n):
+if n > 1:
+return n * factorial(n-1)
+return 1
+
+
+##... and we can test that by running some printing a series of finer approximations on some known value (Google on sin(2) for 0.90929742682, for example then run:
+
+
+ov = 0.90929742682 # "observed" value (from Google)
+approx = 0
+for i in range(3, 15):
+trial = sin(2,i)
+delta_previous = approx - trial
+delta_known = ov - trial
+print i, trial, delta_known, delta_previous,
+if trial == approx:
+print '*'
+else:
+print ''
+approx = trial
