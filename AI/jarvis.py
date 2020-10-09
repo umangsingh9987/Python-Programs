@@ -1,3 +1,15 @@
+# Before importing pyttsx3 and speech_recognition, we need tO install python pakages for them
+# we can do so by using following command in terminal:
+
+# pip install pyttsx3 
+# pip install SpeechRecognition
+
+# pyttsx3 is a text-to-speech conversion library in Python. Unlike alternative libraries, it works offline, and is compatible with both Python 2 and 3.
+# If there is error such as No module named win32com.client, No module named win32, or No module named win32api, 
+# we will need to additionally install pypiwin32 for python 3 using command
+
+# pip install pypiwin32
+
 import pyttsx3
 import speech_recognition as sr
 import datetime
@@ -49,3 +61,4 @@ def takeCommand():
 if __name__ == "__main__":
 	wishMe()
 	takeCommand()
+	
