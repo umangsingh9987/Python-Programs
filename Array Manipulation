@@ -1,0 +1,43 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+# Complete the arrayManipulation function below.
+def arrayManipulation(n, q):
+    l=[0]*(n+1)
+    for i in range(len(q)):
+        a=q[i][0]
+        b=q[i][1]
+        k=q[i][2]
+        l[a-1]=l[a-1]+k
+        l[b]=l[b]-k
+    m = x = 0
+    for i in l:
+        x=x+i;
+        if(m<x): m=x;       
+    return(m)
+    
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    nm = input().split()
+
+    n = int(nm[0])
+
+    m = int(nm[1])
+
+    queries = []
+
+    for _ in range(m):
+        queries.append(list(map(int, input().rstrip().split())))
+
+    result = arrayManipulation(n, queries)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
